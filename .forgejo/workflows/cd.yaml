@@ -32,3 +32,30 @@ jobs:
           
           # Clean up
           kubectl exec $POD_NAME -- rm -rf /tmp/archives/knowledge-fortress
+
+      - name: Sync to Radicle Network
+        run: |
+          RAD_POD=$(kubectl get pods -n radicle -l app=radicle -o jsonpath="{.items[0].metadata.name}")
+          kubectl exec -n radicle $RAD_POD -- mkdir -p /tmp/sync-repo
+          # We use tar to ensure .git and all hidden files are cleanly preserved
+          tar czf - . | kubectl exec -n radicle -i $RAD_POD -- tar xzf - -C /tmp/sync-repo
+          
+          kubectl exec -n radicle $RAD_POD -- bash -c '
+            export RAD_HOME=/radicle/.radicle
+            export RAD_PASSPHRASE="sovereign"
+            export PATH=$PATH:/radicle/bin
+            cd /tmp/sync-repo
+            
+            # Check if repository is already initialized in Radicle
+            if ! rad inspect > /dev/null 2>&1; then
+              echo "Initializing Radicle repository..."
+              rad init --name "knowledge-engineering-fortress" --description "Sovereign Canon" --default-branch master --public --no-confirm
+            else
+              echo "Pushing updates to Radicle..."
+              git push rad master
+            fi
+            
+            # Clean up
+            cd /
+            rm -rf /tmp/sync-repo
+          '
