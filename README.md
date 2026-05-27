@@ -12,3 +12,4 @@ To develop with absolute RIGOR a highly useful and coherent management system th
 3. [Level 3: LLM Routing](level-3-llm-routing.md)
 
 *This repository acts as an immutable context-loader. It is hermetically sealed theory.*
+4. [Level 4: GitField & Temporal Anchoring](level-4-gitfield-philosophy.md)
