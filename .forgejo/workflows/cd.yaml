@@ -1,0 +1,34 @@
+name: Fortress Self-Archival
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Fortress
+        uses: actions/checkout@v4
+
+      - name: Install Kubectl
+        run: |
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+      - name: Pin to IPFS Sanctum
+        run: |
+          # Copy to IPFS pod
+          POD_NAME=$(kubectl get pods -l app=ipfs-node -o jsonpath="{.items[0].metadata.name}")
+          kubectl exec $POD_NAME -- mkdir -p /tmp/archives/knowledge-fortress
+          kubectl cp . $POD_NAME:/tmp/archives/knowledge-fortress
+          
+          # Generate Hash
+          CID=$(kubectl exec $POD_NAME -- ipfs add -r -Q /tmp/archives/knowledge-fortress)
+          echo "========================================="
+          echo "Knowledge Engineering Fortress Archived!"
+          echo "CID: $CID"
+          echo "========================================="
+          
+          # Clean up
+          kubectl exec $POD_NAME -- rm -rf /tmp/archives/knowledge-fortress
