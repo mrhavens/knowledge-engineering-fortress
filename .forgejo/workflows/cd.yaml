@@ -50,7 +50,7 @@ jobs:
             # Check if repository is already initialized in Radicle
             if ! rad inspect > /dev/null 2>&1; then
               echo "Initializing Radicle repository..."
-              rad init --name "knowledge-engineering-fortress" --description "Sovereign Canon" --default-branch master --public --no-confirm
+              rad init --name "${{ github.event.repository.name }}" --description "Sovereign Canon" --default-branch master --public --no-confirm
             else
               echo "Pushing updates to Radicle..."
               git push rad master
