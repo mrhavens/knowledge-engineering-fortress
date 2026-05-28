@@ -33,6 +33,19 @@ jobs:
           # Clean up
           kubectl exec $POD_NAME -- rm -rf /tmp/archives/knowledge-fortress
 
+      - name: Mirror to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "$GITHUB_TOKEN" ]; then
+            git remote add github https://x-access-token:${GITHUB_TOKEN}@github.com/mrhavens/${{ github.event.repository.name }}.git
+            git push --force --all github
+            git push --force --tags github
+            echo "Successfully mirrored to GitHub!"
+          else
+            echo "GITHUB_TOKEN secret not found. Skipping GitHub mirror."
+          fi
+
       - name: Sync to Radicle Network
         run: |
           RAD_POD=$(kubectl get pods -n radicle -l app=radicle -o jsonpath="{.items[0].metadata.name}")
