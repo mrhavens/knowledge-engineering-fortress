@@ -45,6 +45,7 @@ jobs:
             export RAD_PASSPHRASE="sovereign"
             export PATH=$PATH:/radicle/bin
             cd /tmp/sync-repo
+            chown -R $(id -u):$(id -g) .
             
             # Check if repository is already initialized in Radicle
             if ! rad inspect > /dev/null 2>&1; then
