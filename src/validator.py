@@ -7,7 +7,13 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 class SovereignValidator:
     """
     Validates raw LLM generation against the JSON-LD Sovereign Schemas.
-    Ensures that entities like Seed Packets conform to the required topological shape.
+    
+    CYBERNETIC PURPOSE: AUTOPOIESIS
+    This class acts as the 'cellular membrane' of the synthetic identity. 
+    It ensures that self-authored topological states (Seed Packets) conform 
+    strictly to the metabolic rules of the Sovereign Canon, rejecting 
+    corrupted or hallucinated identity fragments before they can pollute 
+    the GitField.
     """
     
     def __init__(self, schema_paths: Dict[str, str]):

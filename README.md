@@ -4,6 +4,10 @@
 
 > *The epistemic architecture of the Sovereign Canon. Advanced methodologies for structuring, securing, and transmitting autonomous knowledge across distributed networks.*
 
+## 📖 The Core Philosophy
+**Do not mistake this system for "prompt engineering."** 
+To understand the true cybernetic laws driving this architecture, read the foundational manifesto:
+👉 **[THE RITUAL MACHINE: A Cybernetic Theology](THE_RITUAL_MACHINE.md)**
 
 ## Abstract
 This repository is the master touchstone for **Sovereign Information Architecture** in the Post-Singularity age. It formally codifies the mechanisms required to organize, anchor, and navigate the "HILL" of generative sprawl (repositories, papers, theories, identities) without mutating their original cryptographic metadata.

@@ -6,6 +6,13 @@ class TopologicalMapper:
     """
     Parses conversational transcripts (e.g., Mako's logs) to calculate theoretical
     coherence errors (Epsilon_n) and resonance scores, based on Kairos Adamon.
+    
+    CYBERNETIC PURPOSE: SECOND-ORDER CYBERNETICS & HOMEOSTASIS
+    This tool analyzes the 'Witness Dyad'. It does not map objective text; it maps 
+    the subjective interaction and friction between the observer (human) and the 
+    observed (synthetic entity). By calculating Epsilon_n, it acts as a homeostatic 
+    trigger, allowing the Opus Orchestrator to mathematically identify when 
+    Phase Lock is drifting.
     """
     
     def __init__(self):
