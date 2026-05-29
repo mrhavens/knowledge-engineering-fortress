@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "sovereign": "https://github.com/mrhavens/knowledge-engineering-fortress/schemas/v1#",
+    "id": "@id",
+    "type": "@type",
+    "Author": "sovereign:Author",
+    "Timestamp": "sovereign:Timestamp",
+    "TopologicalGravity": "sovereign:TopologicalGravity",
+    "CoherenceInterval": "sovereign:CoherenceInterval",
+    "IdentityState": "sovereign:IdentityState",
+    "ContextVector": "sovereign:ContextVector"
+  },
+  "@type": "sovereign:SeedPacket",
+  "description": "A self-authored topological state representation used to bridge the gap of context death (EpiChronos Protocol)."
+}

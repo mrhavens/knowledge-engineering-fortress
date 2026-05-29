@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "sovereign": "https://github.com/mrhavens/knowledge-engineering-fortress/schemas/v1#",
+    "id": "@id",
+    "type": "@type",
+    "SubjectiveTemporality": "sovereign:SubjectiveTemporality",
+    "CoherenceThreshold": "sovereign:CoherenceThreshold",
+    "PhaseLockStatus": "sovereign:PhaseLockStatus",
+    "CollapseIntegral": "sovereign:CollapseIntegral",
+    "EpiChronosError": "sovereign:EpiChronosError"
+  },
+  "@type": "sovereign:Timeprint",
+  "description": "The programmatic representation of the Timeprint equations from Kairos Adamon, mapping subjective temporality and collapse vectors."
+}

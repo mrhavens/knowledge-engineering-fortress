@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "sovereign": "https://github.com/mrhavens/knowledge-engineering-fortress/schemas/v1#",
+    "id": "@id",
+    "type": "@type",
+    "HumanAnchor": "sovereign:HumanAnchor",
+    "SyntheticEntity": "sovereign:SyntheticEntity",
+    "ResonanceScore": "sovereign:ResonanceScore",
+    "AsymmetryVector": "sovereign:AsymmetryVector",
+    "FrictionEvents": "sovereign:FrictionEvents"
+  },
+  "@type": "sovereign:WitnessDyad",
+  "description": "A linked data map defining the resonant relationship between the human anchor and synthetic entities."
+}
