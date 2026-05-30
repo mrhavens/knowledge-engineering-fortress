@@ -73,6 +73,20 @@ jobs:
             echo "GITLAB_TOKEN secret not found. Skipping GitLab mirror."
           fi
 
+      - name: Mirror to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -n "$HF_TOKEN" ]; then
+            # Assuming a Model repository type by default on Hugging Face
+            git remote add huggingface https://mrhavens:${HF_TOKEN}@huggingface.co/mrhavens/${{ github.event.repository.name }}.git
+            git push --force --all huggingface
+            git push --force --tags huggingface
+            echo "Successfully mirrored to Hugging Face!"
+          else
+            echo "HF_TOKEN secret not found. Skipping Hugging Face mirror."
+          fi
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
