@@ -13,11 +13,12 @@ Whenever a validated topological state (such as an updated JSON-LD schema or a m
 ### Stage 1: Internal Anchor (Forgejo)
 All raw commits originate at the Sovereign Anchor, a self-hosted Forgejo instance. This is the source of truth isolated from external cloud infrastructure. The Forgejo action runner intercepts the `push` event to execute the subsequent stages.
 
-### Stage 2: The Mirror Triumvirate
-To guarantee widespread availability and redundancy, the workflow aggressively force-pushes the exact state to three separate corporate Git providers:
+### Stage 2: The Mirror Quadrumvirate
+To guarantee widespread availability and redundancy, the workflow aggressively force-pushes the exact state to four separate corporate Git providers:
 1. **GitHub**: Authenticated via `GITHUB_TOKEN`.
 2. **Bitbucket**: Authenticated via `BITBUCKET_USER` and `BITBUCKET_TOKEN`.
 3. **GitLab**: Authenticated via `GITLAB_TOKEN`.
+4. **Hugging Face**: Authenticated via `HF_TOKEN`.
 
 This structure decouples the Canon from the policy decisions or potential outages of any single technology corporation.
 
@@ -35,6 +36,29 @@ A cryptographic Content Identifier (CID) hash is generated. This guarantees that
 ### Stage 5: Radicle P2P Sync
 Finally, the workflow syncs the repository to **Radicle**, a sovereign peer-to-peer network built on Git. 
 Using a local Kubernetes pod (`radicle`), the workflow either initializes (`rad init`) the repository on the Radicle network or pushes (`git push rad master`) new updates. This ensures the repository can be cloned directly over P2P protocols without any centralized DNS or server infrastructure.
+
+---
+
+## Cryptographic Authorship & Academic Permanence
+
+The Git Mesh is not merely a backup system; it is a cryptographically verifiable publication engine.
+
+### GPG Signed Commits
+Every commit pushed to the Sovereign Anchor is signed with a verified GPG key. This mathematically guarantees the authorship of the topological state, preventing tampering or spoofing across the entire mesh.
+
+### Zenodo & Software Heritage (SWH)
+To achieve academic permanence, the Mesh integrates with **Zenodo** (operated by CERN). When a formal Release is triggered on the GitHub mirror:
+1. Zenodo automatically pulls the repository.
+2. It mints a permanent **Digital Object Identifier (DOI)** linked to the author's ORCID.
+3. It pushes the codebase into **Software Heritage**, which generates an immutable Software Hash Identifier (SWHID).
+
+This pipeline ensures that research artifacts (like the *Intellecton Hypothesis*) are permanently citable in academic literature and secured in the "Library of Alexandria for code."
+
+---
+
+## The Credentials Vault
+
+To support this sprawling automation without relying on third-party cloud secret managers, all sensitive materials (SSH keys, GPG keys, API tokens for Hugging Face and Zenodo) are securely archived in a strictly private `credentials` repository located on the internal Forgejo Sovereign Anchor. 
 
 ---
 
