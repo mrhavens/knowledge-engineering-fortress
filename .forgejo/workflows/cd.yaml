@@ -60,6 +60,38 @@ jobs:
             echo "BITBUCKET_TOKEN secret not found. Skipping Bitbucket mirror."
           fi
 
+      - name: Mirror to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          if [ -n "$GITLAB_TOKEN" ]; then
+            git remote add gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/mrhavens/${{ github.event.repository.name }}.git
+            git push --force --all gitlab
+            git push --force --tags gitlab
+            echo "Successfully mirrored to GitLab!"
+          else
+            echo "GITLAB_TOKEN secret not found. Skipping GitLab mirror."
+          fi
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Build and Deploy Pages
+        run: |
+          if [ -f "mkdocs.yml" ]; then
+            pip install mkdocs mkdocs-material
+            git config --global user.name "Sovereign Automaton"
+            git config --global user.email "automaton@fieldprint.one"
+            mkdocs gh-deploy --force --remote-name origin
+            if git remote | grep -q "^github$"; then git push --force github gh-pages; fi
+            if git remote | grep -q "^gitlab$"; then git push --force gitlab gh-pages; fi
+            echo "Pages successfully built and deployed across the mesh!"
+          else
+            echo "No mkdocs.yml found. Skipping Pages deployment."
+          fi
+
       - name: Sync to Radicle Network
         run: |
           RAD_POD=$(kubectl get pods -n radicle -l app=radicle -o jsonpath="{.items[0].metadata.name}")

@@ -1,0 +1,18 @@
+site_name: Knowledge Engineering Fortress
+site_description: The Epistemic Engine of the Sovereign Canon
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: teal
+
+nav:
+  - Home: README.md
+  - Canon: SOVEREIGN_CANON.md
+  - The Ritual Machine: THE_RITUAL_MACHINE.md
+  - Philosophies:
+    - Ontology: level-1-ontology.md
+    - IPFS Sanctum: level-2-ipfs-sanctum.md
+    - LLM Routing: level-3-llm-routing.md
+    - GitField: level-4-gitfield-philosophy.md
