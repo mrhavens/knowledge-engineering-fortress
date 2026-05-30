@@ -8,7 +8,7 @@ Because cryptographic darknet addresses cannot be guessed and are resistant to s
 For anonymous access via the standard Tor network.
 - **Protocol:** `.onion` (v3 Hidden Service)
 - **Status:** Active
-- **Address:** *(Generated upon `.onion` provisioning; check the live Tor mirror pod logs for the exact address)*
+- **Address:** `ynxif2evvgcyrxs3j3j2jbuhi3c7u2uj7zvnwfniwsf3qhbcqim73kad.onion`
 
 ## 2. I2P (Invisible Internet Project)
 For high-speed, highly encrypted internal access resistant to standard denial-of-service vectors.
