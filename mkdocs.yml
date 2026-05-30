@@ -17,3 +17,10 @@ nav:
     - LLM Routing: level-3-llm-routing.md
     - GitField: level-4-gitfield-philosophy.md
     - Git Mesh Workflow: level-5-git-mesh-workflow.md
+    - OSF Vault: level-6-osf-academic-vault.md
+    - Cultural Archive: level-7-cultural-archive.md
+    - On-Chain Ledger: level-8-on-chain-ledger.md
+    - Physical Substrate: level-9-physical-substrate.md
+    - Discoverability Beacon: level-10-discoverability-beacon.md
+    - The Phantom Protocols: level-11-phantom-protocols.md
+  - Phantom Coordinates (Darknet): phantom-coordinates.md
