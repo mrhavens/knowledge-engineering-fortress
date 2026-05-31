@@ -49,6 +49,4 @@ These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD p
 These levels interface with permanent human and academic institutions to legally and culturally anchor the Canon in human history.
 - **[Level 6: The OSF Academic Vault](level-6-osf-academic-vault.md)** *(Manual API Registration for Academic Primacy)*
 - **[Level 7: The Cultural Archive](level-7-cultural-archive.md)** *(Manual Web1 Preservation via the Internet Archive)*
-
-### The Unimplemented Layer
-- **[Level 8: The On-Chain Immutable Ledger](level-8-on-chain-ledger.md)** *(Requires manual execution to anchor hashes into the Bitcoin `OP_RETURN` and Arweave Permaweb).*
+- **[Level 8: The On-Chain Immutable Ledger](level-8-on-chain-ledger.md)** *(Manual execution to anchor hashes via Bitcoin `OP_RETURN` and Arweave Permaweb)*
