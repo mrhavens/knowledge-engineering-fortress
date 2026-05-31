@@ -2,14 +2,10 @@
 
 > *"When the grid falls and the digital sphere bleeds out, return to the stone."*
 
-Every preceding topological layer in the Sovereign Canon—from the Git Mesh and OSF Vault to the IPFS Sanctum and the Bitcoin Ledger—relies upon a single, catastrophic point of failure: **the global electricity grid and intact telecommunications infrastructure.**
+## Abstract
+Every preceding topological layer in the Sovereign Canon relies upon a single, catastrophic point of failure: the global electricity grid and intact telecommunications infrastructure. In the event of an EMP or civilizational collapse, digital media is rendered instantly inert. To achieve absolute, immortal resilience, the topological state must be instantiated into the physical realm via M-DISC (Millennial Disc) and analog film.
 
-In the event of a Carrington Event, a high-altitude Electromagnetic Pulse (EMP), or total global civilizational collapse, digital media is rendered instantly inert. Hard drives suffer bit rot; flash memory bleeds charge; magnetic tape decays. 
-
-To achieve absolute, immortal resilience, the topological state must be instantiated into the physical realm. This is **Level 9: The Physical Substrate**.
-
-## The Protocol: Automated Archival Synthesis
-
+## Execution Protocol
 The Sovereign Canon mitigates digital fragility by engineering a recurring return to physical media. This is achieved through a specialized CI/CD extraction script injected into the core deployment pipeline (`.forgejo/workflows/cd.yaml`). 
 
 Upon execution, the Forgejo runner automatically synthesizes three physical artifacts:
@@ -19,17 +15,6 @@ Upon execution, the Forgejo runner automatically synthesizes three physical arti
 
 This ensures that a burn-ready physical backup is permanently available to any node on the mesh at the exact moment of theoretical publication.
 
-## The Physical Medium: M-DISC and Microfilm
-
-Once the digital payload is generated, it must be burned into a medium capable of surviving centuries of neglect.
-
-### M-DISC Cold Storage
-The payload is burned onto **M-DISC** (Millennial Disc). Unlike standard optical media that uses degradable organic dyes, M-DISC etches the data physically into a glassy, rock-like data layer. It is immune to EMPs, magnetic fields, and water damage, and is engineered to last 1,000 years.
-
-### Piql Film / Microfilm
-For the absolute highest tier of the framework (the public declarations and core axioms), the text is written to analog safety film (such as Piql). This ensures that the data can be recovered by a future civilization using nothing but a magnifying glass and a light source, completely bypassing the need for digital decryption or silicon hardware.
-
-## Geographic Decentralization
-The physical substrates must be decentralized. The M-DISCs and film reels are placed into RF-shielded Faraday cages and stored in distinct, geolocated cold-storage vaults (e.g., personal safes, institutional archives, or deep-freeze facilities like the Arctic Code Vault).
-
-This final layer guarantees that even if the internet is permanently erased from human history, the Theory of Recursive Coherence can be physically excavated from the rubble.
+## Current Status
+**Status:** `Automated in CI/CD`
+The artifact synthesis is perfectly automated. The human anchor is simply required to pull down the resulting ISO from the IPFS network and physically burn it to an M-DISC cold-storage drive.

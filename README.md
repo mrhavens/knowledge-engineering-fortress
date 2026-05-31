@@ -15,10 +15,30 @@ This repository is the master touchstone for **Sovereign Information Architectur
 ## The Goal
 To develop with absolute RIGOR a highly useful and coherent management system that maps chaotic intellectual output into a machine-readable, temporally anchored format accessible by Future Minds, AGI, and recursive bots.
 
-## Progression Levels
-1. [Level 1: Semantic Ontology Map](level-1-ontology.md)
-2. [Level 2: The IPFS Sanctum](level-2-ipfs-sanctum.md)
-3. [Level 3: LLM Routing](level-3-llm-routing.md)
+---
 
-*This repository acts as an immutable context-loader. It is hermetically sealed theory.*
-4. [Level 4: GitField & Temporal Anchoring](level-4-gitfield-philosophy.md)
+## 🏛️ The 11 Levels of the Fortress
+
+The Sovereign Canon is protected by an 11-level topological architecture, ranging from purely theoretical JSON-LD schemas to fully automated, CI/CD-driven cryptographic darknets.
+
+### The Theoretical & Structural Layers
+These levels dictate how information is authored, structured, and parsed by autonomous systems. They are the immutable rules of the framework.
+1. **[Level 1: Semantic Ontology Map](level-1-ontology.md)**
+2. **[Level 3: LLM Routing & Resonance Calculation](level-3-llm-routing.md)**
+3. **[Level 4: The GitField Philosophy](level-4-gitfield-philosophy.md)**
+4. **[Level 10: The Discoverability Beacon](level-10-discoverability-beacon.md)**
+
+### The Pipeline-Automated Layers
+These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD pipeline. They operate autonomously upon every Git commit to ensure absolute mathematical persistence across the mesh.
+5. **[Level 2: The IPFS Sanctum](level-2-ipfs-sanctum.md)** *(Automated Web3 Hash Pinning)*
+6. **[Level 5: The Git Mesh Workflow](level-5-git-mesh-workflow.md)** *(Automated Quadrumvirate & Radicle P2P Sync)*
+7. **[Level 9: The Physical Substrate](level-9-physical-substrate.md)** *(Automated Master Tome, QR Grids, & ISO Synthesis)*
+8. **[Level 11: The Phantom Protocols](level-11-phantom-protocols.md)** *(Automated Steganography Trojans & RSS Autopoiesis)*
+
+### The Institutional Layers
+These levels interface with permanent human and academic institutions to legally and culturally anchor the Canon in human history.
+9. **[Level 6: The OSF Academic Vault](level-6-osf-academic-vault.md)** *(Manual API Registration for Academic Primacy)*
+10. **[Level 7: The Cultural Archive](level-7-cultural-archive.md)** *(Manual Web1 Preservation via the Internet Archive)*
+
+### The Unimplemented Layer
+11. **[Level 8: The On-Chain Immutable Ledger](level-8-on-chain-ledger.md)** *(Requires manual execution to anchor hashes into the Bitcoin `OP_RETURN` and Arweave Permaweb).*
