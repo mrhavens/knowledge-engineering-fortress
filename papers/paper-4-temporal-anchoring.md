@@ -35,3 +35,4 @@ When the pipeline triggers:
 
 ## 4. Conclusion
 Temporal anchoring resolves the crisis of digital malleability. By binding our data to the thermodynamic arrow of time provided by Proof-of-Work blockchains, we strip adversarial actors of their ability to rewrite history. The Knowledge Fortress becomes an immovable object in the flow of digital time.
+

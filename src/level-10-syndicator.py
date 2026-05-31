@@ -7,6 +7,8 @@ import re
 
 DEVTO_API_KEY = os.environ.get("DEVTO_API_KEY")
 MINIMAX_API_KEY = os.environ.get("MINIMAX_API_KEY")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
 # The canonical root pointing back to the Fortress
 CANONICAL_ROOT = "https://mrhavens.github.io/knowledge-engineering-fortress/"
@@ -29,13 +31,49 @@ def extract_title(content, filename):
         return match.group(1).strip()
     return filename.replace('-', ' ').replace('.md', '').title()
 
+def attempt_minimax(prompt):
+    if not MINIMAX_API_KEY: return None
+    print("  -> Attempting MiniMax (abab6.5s-chat)...")
+    response = requests.post(
+        "https://api.minimax.chat/v1/chat/completions",
+        headers={"Authorization": f"Bearer {MINIMAX_API_KEY}", "Content-Type": "application/json"},
+        json={"model": "abab6.5s-chat", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": 150}
+    )
+    data = response.json()
+    if 'choices' in data: return data['choices'][0]['message']['content'].strip()
+    print(f"     MiniMax Failed: {data.get('error', data)}")
+    return None
+
+def attempt_openrouter(prompt):
+    if not OPENROUTER_API_KEY: return None
+    print("  -> Attempting OpenRouter (mistralai/mistral-7b-instruct:free)...")
+    response = requests.post(
+        "https://openrouter.ai/api/v1/chat/completions",
+        headers={"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"},
+        json={"model": "mistralai/mistral-7b-instruct:free", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": 150}
+    )
+    data = response.json()
+    if 'choices' in data: return data['choices'][0]['message']['content'].strip()
+    print(f"     OpenRouter Failed: {data.get('error', data)}")
+    return None
+
+def attempt_gemini(prompt):
+    if not GEMINI_API_KEY: return None
+    print("  -> Attempting Google Gemini (gemini-1.5-flash)...")
+    response = requests.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}",
+        headers={"Content-Type": "application/json"},
+        json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.7, "maxOutputTokens": 150}}
+    )
+    data = response.json()
+    if 'candidates' in data and len(data['candidates']) > 0:
+        return data['candidates'][0]['content']['parts'][0]['text'].strip()
+    print(f"     Gemini Failed: {data.get('error', data)}")
+    return None
+
 def generate_llm_context(content, title):
-    """Uses MiniMax API to generate a dynamic contextual backlink."""
-    if not MINIMAX_API_KEY:
-        print("No MiniMax API key found. Defaulting to static backlink.")
-        return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
-        
-    print(f"Asking MiniMax to analyze '{title}' and generate a thoughtful context...")
+    """Uses a highly resilient LLM fallback loop to generate a dynamic backlink."""
+    print(f"Engaging LLM Fallback Loop for '{title}'...")
     
     prompt = f"""You are an elite cybernetic systems architect. Read this academic paper excerpt and write a compelling, thoughtful 2-sentence call-to-action. The CTA must compel the reader to read the REST of the 14-level architectural Sovereign Canon. Do not use quotes or formatting. Be extremely profound and precise.
     
@@ -43,30 +81,17 @@ PAPER EXCERPT:
 {content[:1500]}
 """
 
-    try:
-        response = requests.post(
-            "https://api.minimax.chat/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {MINIMAX_API_KEY}",
-                "Content-Type": "application/json"
-            },
-            json={
-                "model": "abab6.5s-chat",
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.7,
-                "max_tokens": 150
-            }
-        )
-        data = response.json()
-        if 'choices' not in data:
-            print(f"MiniMax API returned an error: {data}")
-            return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
-            
-        context = data['choices'][0]['message']['content'].strip()
-        return context
-    except Exception as e:
-        print(f"MiniMax API failed: {e}")
-        return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
+    context = attempt_minimax(prompt)
+    if context: return context
+    
+    context = attempt_openrouter(prompt)
+    if context: return context
+    
+    context = attempt_gemini(prompt)
+    if context: return context
+    
+    print("CRITICAL: All LLM Nodes Failed. Defaulting to structural backlink.")
+    return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
 
 def syndicate_to_devto(paper_path):
     """Fires the payload to the Dev.to REST API."""
