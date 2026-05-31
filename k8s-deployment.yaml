@@ -20,7 +20,7 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
         - |
-          git clone https://github.com/mrhavens/knowledge-engineering-fortress.git /src && cd /src && git checkout master
+          git clone --recurse-submodules https://github.com/mrhavens/knowledge-engineering-fortress.git /src && cd /src && git checkout master
         volumeMounts:
         - name: hugo-src
           mountPath: /src

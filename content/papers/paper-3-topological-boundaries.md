@@ -1,5 +1,8 @@
 # The Topological Boundaries of Information: Defining the Event Horizon of Truth
 
+{{< image src="/img/paper_3_banner.png" alt="Topological Boundaries and Markov Blankets" >}}
+
+
 **Abstract:**
 We introduce the concept of the *Information Event Horizon*, a topological boundary delineating where a cohesive knowledge structure transitions into chaotic noise. We argue that information cannot survive simply by being stored; it must possess a definitive boundary that repels semantic corruption. By utilizing topological data analysis (TDA) and Markov Blankets, we establish a formal mathematical definition for the "edges" of an epistemically sound system, protecting it from adversarial data injection.
 

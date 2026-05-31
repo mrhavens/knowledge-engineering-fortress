@@ -1,5 +1,8 @@
 # Epistemic Autopoiesis: The Self-Creating Architecture of Knowledge
 
+{{< image src="/img/paper_1_banner.png" alt="Epistemic Autopoiesis Architecture" >}}
+
+
 **Abstract:** 
 In an era characterized by epistemic decay, information entropy, and algorithmic manipulation, static archives are insufficient for the preservation of truth. We introduce the concept of *Epistemic Autopoiesis*—a paradigm in which knowledge systems transition from passive repositories to active, self-maintaining organisms. Drawing upon the biological framework of autopoiesis (Maturana and Varela) and integrating it with cryptographic immutability, decentralized routing, and recursive validation mechanisms, we outline the foundational architecture for a knowledge fortress capable of surviving ontological drift.
 

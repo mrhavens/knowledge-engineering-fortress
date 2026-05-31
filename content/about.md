@@ -4,6 +4,9 @@ date: 2026-05-31T00:00:00Z
 type: "page"
 ---
 
+{{< image src="/img/about_banner.png" alt="Mark Randall Havens - The Empathic Technologist" >}}
+
+
 ## Mark Randall Havens | The Empathic Technologist
 
 I am an engineer, architect, and philosopher building cybernetic systems that honor human resonance. My work bridges the rigid calculus of high-performance computing with the fluid, subjective architecture of human experience.

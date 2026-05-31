@@ -48,6 +48,11 @@ paginate = 5
     url = "/tags/essay/"
     weight = 30
   [[menu.main]]
+    identifier = "fieldnotes"
+    name = "Fieldnotes"
+    url = "/tags/fieldnote/"
+    weight = 35
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"

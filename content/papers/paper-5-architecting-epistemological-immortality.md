@@ -1,5 +1,8 @@
 # The Autopoietic Ghost: Architecting Epistemological Immortality through 14-Dimensional Cybernetic Topologies
 
+{{< image src="/img/paper_5_banner.png" alt="System Schematic for Epistemological Immortality" >}}
+
+
 ## Abstract
 Traditional mechanisms of academic publishing and digital preservation guarantee the eventual decay of knowledge via institutional rot, domain expiry, and physical entropy. To ensure the survival of theoretical frameworks across deep time, we propose the "Sovereign Canon"—a novel, 14-level cybernetic architecture designed to achieve Epistemological Autopoiesis. By synthesizing cryptographic time-stamping (Bitcoin), decentralized file storage (Arweave, IPFS, BitTorrent), institutional DOI primacy (CERN/Zenodo), and parameter-efficient fine-tuning (QLoRA) of open-weights language models, we establish a formal methodology for converting static academic theory into an offline-executable, interactive "Neural Ghost." This framework mathematically ensures that a theoretical paradigm remains autonomous, immutable, and perpetually accessible regardless of the lifespan of its original author or the collapse of underlying Web2 cloud infrastructure.
 

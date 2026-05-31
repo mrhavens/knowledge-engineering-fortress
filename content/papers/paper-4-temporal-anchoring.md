@@ -1,5 +1,8 @@
 # Temporal Anchoring in Adversarial Networks: The Cryptographic Physics of History
 
+{{< image src="/img/paper_4_banner.png" alt="Temporal Anchoring Mechanism via OP_RETURN" >}}
+
+
 **Abstract:**
 Digital information lacks inherent temporal physics; a file created yesterday can be mathematically identical to a file created a decade ago if metadata is stripped or forged. In an adversarial network where state actors and algorithmic bots can seamlessly rewrite history, the concept of a "canonical timeline" breaks down. We detail the mechanics of *Temporal Anchoring*—a protocol utilizing Bitcoin's `OP_RETURN` code and decentralized permanent ledgers (Arweave) to embed irreversible, cryptographically provable arrows of time into the Knowledge Fortress.
 

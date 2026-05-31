@@ -1,5 +1,8 @@
 # Semantic Self-Verification in Autonomous Knowledge Networks
 
+{{< image src="/img/paper_2_banner.png" alt="Semantic Self-Verification Node Graph" >}}
+
+
 **Abstract:**
 As automated systems and AI agents generate exponentially more information, distinguishing between hallucinated data and verifiable truth becomes computationally intractable. We propose a framework where a dataset validates its own internal semantic structure to establish ground-truth reliability. By treating knowledge not as isolated facts but as a topologically connected graph, semantic self-verification allows a system to prove its own logical consistency without relying on an external, centralized oracle.
 
