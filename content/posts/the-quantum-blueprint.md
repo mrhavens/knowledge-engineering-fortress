@@ -267,7 +267,7 @@ By [Mark Randall Havens △ The Empathic Technologist](https://medium.com/@mark-
 
 [Canonical link](https://medium.com/@mark-havens/the-quantum-blueprint-how-information-shapes-reality-and-consciousness-41cd62a88d61)
 
-[Earliest Internet Archive Capture](https://web.archive.org/web/20250311202450/https://medium.com/@mark-havens/the-quantum-blueprint-how-information-shapes-reality-and-consciousness-41cd62a88d61)
+[Earliest Internet Archive Capture](https://web.archive.org/web/20250323171933/https://medium.com/the-empathic-technologist/the-quantum-blueprint-how-information-shapes-reality-and-consciousness-41cd62a88d61)
 
 Exported from [Medium](https://medium.com) on May 23, 2026.
 
