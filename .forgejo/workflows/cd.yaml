@@ -11,6 +11,23 @@ jobs:
       - name: Check out Fortress
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Compile Level 13 ML Dataset
+        run: |
+          python3 src/level-13-huggingface-dataset.py
+          if [[ -n $(git status -s sovereign-canon-dataset.jsonl) ]]; then
+            git config --global user.name "Sovereign Automaton"
+            git config --global user.email "automaton@fieldprint.one"
+            git add sovereign-canon-dataset.jsonl
+            git commit -m "Auto-compile Level 13 JSONL Dataset [CI Skip]"
+          else
+            echo "Dataset is up to date."
+          fi
+
       - name: Install Kubectl
         run: |
           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -86,11 +103,6 @@ jobs:
           else
             echo "HF_TOKEN secret not found. Skipping Hugging Face mirror."
           fi
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
 
       - name: Build and Deploy Pages
         run: |
