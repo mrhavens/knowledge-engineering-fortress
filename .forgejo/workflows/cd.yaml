@@ -32,7 +32,7 @@ jobs:
       - name: Level 10 Syndication Broadcast
         env:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
         run: |
           python3 src/level-10-syndicator.py
 

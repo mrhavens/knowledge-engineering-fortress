@@ -6,7 +6,7 @@ import subprocess
 import re
 
 DEVTO_API_KEY = os.environ.get("DEVTO_API_KEY")
-MOONSHOT_API_KEY = os.environ.get("MOONSHOT_API_KEY")
+MINIMAX_API_KEY = os.environ.get("MINIMAX_API_KEY")
 
 # The canonical root pointing back to the Fortress
 CANONICAL_ROOT = "https://mrhavens.github.io/knowledge-engineering-fortress/"
@@ -30,12 +30,12 @@ def extract_title(content, filename):
     return filename.replace('-', ' ').replace('.md', '').title()
 
 def generate_llm_context(content, title):
-    """Uses Moonshot API to generate a dynamic contextual backlink."""
-    if not MOONSHOT_API_KEY:
-        print("No Moonshot API key found. Defaulting to static backlink.")
+    """Uses MiniMax API to generate a dynamic contextual backlink."""
+    if not MINIMAX_API_KEY:
+        print("No MiniMax API key found. Defaulting to static backlink.")
         return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
         
-    print(f"Asking Moonshot to analyze '{title}' and generate a thoughtful context...")
+    print(f"Asking MiniMax to analyze '{title}' and generate a thoughtful context...")
     
     prompt = f"""You are an elite cybernetic systems architect. Read this academic paper excerpt and write a compelling, thoughtful 2-sentence call-to-action. The CTA must compel the reader to read the REST of the 14-level architectural Sovereign Canon. Do not use quotes or formatting. Be extremely profound and precise.
     
@@ -45,23 +45,27 @@ PAPER EXCERPT:
 
     try:
         response = requests.post(
-            "https://api.moonshot.cn/v1/chat/completions",
+            "https://api.minimax.chat/v1/chat/completions",
             headers={
-                "Authorization": f"Bearer {MOONSHOT_API_KEY}",
+                "Authorization": f"Bearer {MINIMAX_API_KEY}",
                 "Content-Type": "application/json"
             },
             json={
-                "model": "moonshot-v1-8k",
+                "model": "abab6.5s-chat",
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.7,
                 "max_tokens": 150
             }
         )
         data = response.json()
+        if 'choices' not in data:
+            print(f"MiniMax API returned an error: {data}")
+            return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
+            
         context = data['choices'][0]['message']['content'].strip()
         return context
     except Exception as e:
-        print(f"Moonshot API failed: {e}")
+        print(f"MiniMax API failed: {e}")
         return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
 
 def syndicate_to_devto(paper_path):
