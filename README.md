@@ -27,16 +27,15 @@ The underlying theory driving this framework is continually expanded in standalo
 
 ---
 
-## 🏛️ The 12 Levels of the Fortress
+## 🏛️ The 14 Levels of the Fortress
 
-The Sovereign Canon is protected by a 12-level topological architecture, ranging from purely theoretical JSON-LD schemas to fully automated, CI/CD-driven cryptographic darknets.
+The Sovereign Canon is protected by a 14-level topological architecture, ranging from purely theoretical JSON-LD schemas to fully automated, CI/CD-driven cryptographic darknets.
 
 ### The Theoretical & Structural Layers
 These levels dictate how information is authored, structured, and parsed by autonomous systems. They are the immutable rules of the framework.
 - **[Level 1: Semantic Ontology Map](level-1-ontology.md)**
 - **[Level 3: LLM Routing & Resonance Calculation](level-3-llm-routing.md)**
 - **[Level 4: The GitField Philosophy](level-4-gitfield-philosophy.md)**
-- **[Level 10: The Discoverability Beacon](level-10-discoverability-beacon.md)**
 
 ### The Pipeline-Automated Layers
 These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD pipeline or via pre-commit hooks. They operate autonomously upon every Git commit to ensure absolute mathematical persistence across the mesh.
