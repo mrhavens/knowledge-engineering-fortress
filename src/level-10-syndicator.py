@@ -163,7 +163,11 @@ def syndicate_to_hashnode(paper_path, title, canonical_url, content_with_backlin
     
     print(f"Broadcasting '{title}' to Hashnode...")
     try:
-        response = requests.post("https://gql.hashnode.com", json=payload, headers=headers)
+        response = requests.post("https://gql-beta.hashnode.com/", json=payload, headers=headers)
+        if response.headers.get('Content-Type', '').startswith('text/html'):
+            print(f"Hashnode returned HTML instead of JSON: {response.text[:200]}")
+            return
+            
         data = response.json()
         if "errors" not in data and "data" in data and data["data"]["publishPost"]:
             print(f"Success! Hashnode Canonical URL synced: {data['data']['publishPost']['post']['url']}")
