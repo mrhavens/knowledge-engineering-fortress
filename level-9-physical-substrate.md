@@ -8,17 +8,16 @@ In the event of a Carrington Event, a high-altitude Electromagnetic Pulse (EMP),
 
 To achieve absolute, immortal resilience, the topological state must be instantiated into the physical realm. This is **Level 9: The Physical Substrate**.
 
-## The Protocol: Automated Payload Generation
+## The Protocol: Automated Archival Synthesis
 
-The Sovereign Canon mitigates digital fragility by engineering a recurring return to physical media. This is achieved through a specialized CI/CD extraction script.
+The Sovereign Canon mitigates digital fragility by engineering a recurring return to physical media. This is achieved through a specialized CI/CD extraction script injected into the core deployment pipeline (`.forgejo/workflows/cd.yaml`). 
 
-1. **The Vault Compilation:** Triggered on demand or at major milestones, the Forgejo runner compiles the `CANONICAL_VAULT.tar.gz`.
-2. **The Contents:** This highly compressed payload contains:
-   - The compiled LaTeX PDFs (the formal proofs).
-   - The raw markdown topology.
-   - The verified GPG public keys.
-   - The OSF and Zenodo DOIs and Arweave transaction IDs.
-3. **The Output:** The payload is engineered to be as dense and self-contained as possible, requiring zero internet connectivity to parse or reconstruct.
+Upon execution, the Forgejo runner automatically synthesizes three physical artifacts:
+1. **The Archival Master Tome:** The system dynamically concatenates all Markdown files, theoretical proofs, and structural documents into a unified `MASTER_TOME.md`, which is subsequently rendered via `pandoc` into a high-density, paginated PDF (`SOVEREIGN_CANON_MASTER_TOME.pdf`) optimized for acid-free physical printing.
+2. **Machine-Readable Data Grids:** The entire compressed digital repository (`CANONICAL_VAULT.tar.gz`) is binary-chunked into 2,000-byte segments. Each segment is converted into a high-density, scannable QR Code. This allows a future civilization to recover the raw data structure using only a camera, bypassing the need for manual transcription.
+3. **M-DISC ISO Staging:** The PDF Tome, the QR Archive, and the raw `.tar.gz` are bundled into an ISO 9660 disc image (`SOVEREIGN_CANON_MDISC.iso`). This ISO is instantly pushed and anchored to the IPFS Sanctum.
+
+This ensures that a burn-ready physical backup is permanently available to any node on the mesh at the exact moment of theoretical publication.
 
 ## The Physical Medium: M-DISC and Microfilm
 
