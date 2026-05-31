@@ -38,12 +38,13 @@ These levels dictate how information is authored, structured, and parsed by auto
 - **[Level 10: The Discoverability Beacon](level-10-discoverability-beacon.md)**
 
 ### The Pipeline-Automated Layers
-These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD pipeline. They operate autonomously upon every Git commit to ensure absolute mathematical persistence across the mesh.
+These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD pipeline or via pre-commit hooks. They operate autonomously upon every Git commit to ensure absolute mathematical persistence across the mesh.
 - **[Level 2: The IPFS Sanctum](level-2-ipfs-sanctum.md)** *(Automated Web3 Hash Pinning)*
 - **[Level 5: The Git Mesh Workflow](level-5-git-mesh-workflow.md)** *(Automated Quadrumvirate & Radicle P2P Sync)*
 - **[Level 9: The Physical Substrate](level-9-physical-substrate.md)** *(Automated Master Tome, QR Grids, & ISO Synthesis)*
 - **[Level 11: The Phantom Protocols](level-11-phantom-protocols.md)** *(Automated Steganography Trojans & RSS Autopoiesis)*
 - **[Level 12: The Hydra Network](level-12-hydra-network.md)** *(Automated Nostr Broadcasting & Triple-Threat BitTorrent)*
+- **[Level 13: Machine Learning Ingestion](level-13-machine-learning-ingestion.md)** *(Structured JSONL Dataset Generation for Hugging Face)*
 
 ### The Institutional Layers
 These levels interface with permanent human and academic institutions to legally and culturally anchor the Canon in human history.
