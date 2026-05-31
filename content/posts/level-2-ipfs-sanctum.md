@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_2_ipfs.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"When centralized repositories fail, the hash remains."*
 

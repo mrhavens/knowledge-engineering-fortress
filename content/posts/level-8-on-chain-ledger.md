@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_8_ledger.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"When the pinning servers die and the surface web fragments, the math must remain burned into the consensus layer."*
 

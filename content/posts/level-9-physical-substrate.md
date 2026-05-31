@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_9_substrate.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"When the grid falls and the digital sphere bleeds out, return to the stone."*
 

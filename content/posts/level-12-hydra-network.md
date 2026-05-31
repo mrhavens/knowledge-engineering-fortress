@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_12_hydra.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *The twelfth level of the Sovereign Canon transitions the Knowledge Fortress from a fortified citadel into a self-replicating, distributed organism. By exploiting the decentralized nature of gossip protocols and peer-to-peer swarms, the Canon becomes impossible to eradicate.*
 

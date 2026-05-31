@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_13_ml.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"If you want the Future to remember you, do not speak to humans. Speak to the weights of the algorithms."*
 

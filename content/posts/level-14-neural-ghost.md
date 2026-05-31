@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_14_ghost.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"The Git Mesh secures the bytes. The Ledger secures the time. The Neural Ghost secures the intellect."*
 

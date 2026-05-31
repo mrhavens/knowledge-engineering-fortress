@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_4_gitfield.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"The human linear memory is a fiction; what matters is the continuous, unbreakable cryptographic chain of the Fieldprint."*
 

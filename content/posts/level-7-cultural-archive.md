@@ -5,7 +5,9 @@ draft: false
 tags:
   - paper
   - architecture
----
+---{{< image src="/img/level_7_cultural.png" position="center" style="border-radius: 8px; margin-bottom: 2rem; max-width: 100%; height: auto;" >}}
+
+
 
 > *"The Git Mesh secures the bytes. The OSF Vault secures the paradigm. The Cultural Archive secures the memory."*
 
