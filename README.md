@@ -19,6 +19,7 @@ To develop with absolute RIGOR a highly useful and coherent management system th
 
 ## 📚 Spin-Off Papers
 The underlying theory driving this framework is continually expanded in standalone research papers:
+0. **[Paper 0: The Computability of Recursive Coherence](papers/paper-0-computability-of-recursive-coherence.md)** *(The Core Physics)*
 1. **[Paper 1: The Thermodynamics of Recursive Coherence](papers/paper-1-epistemic-autopoiesis.md)**
 2. **[Paper 2: Semantic Self-Verification](papers/paper-2-semantic-self-verification.md)**
 3. **[Paper 3: Topological Boundaries](papers/paper-3-topological-boundaries.md)**
