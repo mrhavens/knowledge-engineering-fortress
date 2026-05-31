@@ -46,11 +46,11 @@ def attempt_minimax(prompt):
 
 def attempt_openrouter(prompt):
     if not OPENROUTER_API_KEY: return None
-    print("  -> Attempting OpenRouter (mistralai/mistral-7b-instruct:free)...")
+    print("  -> Attempting OpenRouter (meta-llama/llama-3.3-70b-instruct:free)...")
     response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
         headers={"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"},
-        json={"model": "mistralai/mistral-7b-instruct:free", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": 150}
+        json={"model": "meta-llama/llama-3.3-70b-instruct:free", "messages": [{"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": 150}
     )
     data = response.json()
     if 'choices' in data: return data['choices'][0]['message']['content'].strip()
@@ -59,9 +59,9 @@ def attempt_openrouter(prompt):
 
 def attempt_gemini(prompt):
     if not GEMINI_API_KEY: return None
-    print("  -> Attempting Google Gemini (gemini-1.5-flash)...")
+    print("  -> Attempting Google Gemini (gemini-pro)...")
     response = requests.post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}",
+        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={GEMINI_API_KEY}",
         headers={"Content-Type": "application/json"},
         json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.7, "maxOutputTokens": 150}}
     )
