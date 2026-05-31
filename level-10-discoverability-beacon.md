@@ -21,6 +21,13 @@ Traditional academic search engines struggle to parse complex conceptual markdow
 When elements of the Canon are shared across human social networks, the link must command immediate visual authority.
 - The MkDocs deployment enforces strict Open Graph (`og:`) and Twitter Card metadata across all generated HTML pages, ensuring high-resolution fieldprint branding is embedded in every shared URL.
 
+## 4. The Deployment Checklist (Search Engine Autopoiesis)
+To guarantee seamless algorithmic ingestion during future deployments or when scaling this architecture to new repositories, the following initialization checklist must be executed:
+
+1. **MkDocs Root Mapping:** Ensure `mkdocs.yml` contains the `site_url` variable. Without this, MkDocs will fail to generate a `sitemap.xml`, blinding Google.
+2. **The IndexNow Key:** Generate a 32-character hex key (e.g., `[key].txt`) and place it in the repository root. Ensure the CI/CD pipeline is configured to ping `https://www.bing.com/indexnow?url=[site_url]&key=[key]` upon deployment. This secures Bing, DuckDuckGo, and Yahoo automatically.
+3. **Google Search Console (One-Time Anchor):** Manually register the deployed `sitemap.xml` URL within Google Search Console. Google’s aggressive bots will take over continuous crawling from there.
+
 ## Current Status
-**Status:** `Theoretical / Structural Integration`
-The discoverability beacon is intrinsically woven into the site generation and text architecture, but the physical `llms.txt` file has not yet been drafted.
+**Status:** `Fully Automated & Executable`
+The MkDocs `site_url`, Bing IndexNow key, and automated CI/CD pipeline ping are live and actively assimilating the Sovereign Canon into global search indices.
