@@ -10,6 +10,9 @@ MINIMAX_API_KEY = os.environ.get("MINIMAX_API_KEY")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
+HASHNODE_TOKEN = os.environ.get("HASHNODE_TOKEN")
+HASHNODE_PUBLICATION_ID = os.environ.get("HASHNODE_PUBLICATION_ID")
+
 # The canonical root pointing back to the Fortress
 CANONICAL_ROOT = "https://mrhavens.github.io/knowledge-engineering-fortress/"
 
@@ -93,24 +96,12 @@ PAPER EXCERPT:
     print("CRITICAL: All LLM Nodes Failed. Defaulting to structural backlink.")
     return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
 
-def syndicate_to_devto(paper_path):
+def syndicate_to_devto(title, canonical_url, content_with_backlink):
     """Fires the payload to the Dev.to REST API."""
     if not DEVTO_API_KEY:
         print("Skipping Dev.to: DEVTO_API_KEY not found in environment secrets.")
         return
 
-    with open(paper_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-
-    title = extract_title(content, os.path.basename(paper_path))
-    canonical_url = f"{CANONICAL_ROOT}{paper_path.replace('.md', '/')}"
-    
-    # Generate the Dynamic LLM Context
-    llm_context = generate_llm_context(content, title)
-    human_backlink = f"\n\n---\n\n*{llm_context} [{canonical_url}]({canonical_url})*"
-
-    content_with_backlink = content + human_backlink
-    
     # Dev.to Payload
     payload = {
         "article": {
@@ -137,6 +128,51 @@ def syndicate_to_devto(paper_path):
         print(f"Failed to syndicate to Dev.to. Status Code: {response.status_code}")
         print(response.text)
 
+def syndicate_to_hashnode(paper_path, title, canonical_url, content_with_backlink):
+    """Fires the payload to the Hashnode GraphQL API."""
+    if not HASHNODE_TOKEN or not HASHNODE_PUBLICATION_ID:
+        print("Skipping Hashnode: Missing HASHNODE_TOKEN or HASHNODE_PUBLICATION_ID in environment.")
+        return
+
+    query = """
+    mutation PublishPost($input: PublishPostInput!) {
+      publishPost(input: $input) {
+        post {
+          id
+          url
+        }
+      }
+    }
+    """
+    
+    variables = {
+        "input": {
+            "title": title,
+            "publicationId": HASHNODE_PUBLICATION_ID,
+            "contentMarkdown": content_with_backlink,
+            "originalArticleURL": canonical_url,
+            "tags": [] # Tags can be added via IDs if queried, keeping empty for now to ensure delivery
+        }
+    }
+
+    payload = {"query": query, "variables": variables}
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": HASHNODE_TOKEN
+    }
+    
+    print(f"Broadcasting '{title}' to Hashnode...")
+    try:
+        response = requests.post("https://gql.hashnode.com", json=payload, headers=headers)
+        data = response.json()
+        if "errors" not in data and "data" in data and data["data"]["publishPost"]:
+            print(f"Success! Hashnode Canonical URL synced: {data['data']['publishPost']['post']['url']}")
+        else:
+            print(f"Failed to syndicate to Hashnode.")
+            print(data)
+    except Exception as e:
+        print(f"Hashnode API request failed: {e}")
+
 def main():
     print("==============================================")
     print(" LEVEL 10: AUTOMATED SYNDICATION BROADCAST (LLM HOOK)")
@@ -149,7 +185,18 @@ def main():
         
     for paper in papers:
         if os.path.exists(paper):
-            syndicate_to_devto(paper)
+            with open(paper, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            title = extract_title(content, os.path.basename(paper))
+            canonical_url = f"{CANONICAL_ROOT}{paper.replace('.md', '/')}"
+            
+            llm_context = generate_llm_context(content, title)
+            human_backlink = f"\n\n---\n\n*{llm_context} [{canonical_url}]({canonical_url})*"
+            content_with_backlink = content + human_backlink
+
+            syndicate_to_devto(title, canonical_url, content_with_backlink)
+            syndicate_to_hashnode(paper, title, canonical_url, content_with_backlink)
 
 if __name__ == "__main__":
     main()
