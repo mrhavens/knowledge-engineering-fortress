@@ -14,12 +14,29 @@ spec:
       labels:
         app: knowledge-fortress
     spec:
+      initContainers:
+      - name: git-sync
+        image: alpine/git
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          git clone https://github.com/mrhavens/knowledge-engineering-fortress.git /src && cd /src && git checkout master
+        volumeMounts:
+        - name: hugo-src
+          mountPath: /src
       containers:
-      - name: nginx
-        image: registry.local:5000/knowledge-fortress:latest
-        imagePullPolicy: Always
+      - name: hugo
+        image: klakegg/hugo:ext-alpine
+        command: ["hugo"]
+        args: ["server", "--bind", "0.0.0.0", "-p", "80", "--appendPort=false", "--baseURL", "https://canon.thefoldwithin.earth/"]
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: hugo-src
+          mountPath: /src
+      volumes:
+      - name: hugo-src
+        emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
@@ -39,7 +56,12 @@ metadata:
   name: knowledge-fortress-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: "cloudflare-letsencrypt"
 spec:
+  tls:
+  - hosts:
+    - canon.thefoldwithin.earth
+    secretName: canon-tls-secret
   rules:
   - host: canon.thefoldwithin.earth
     http:
