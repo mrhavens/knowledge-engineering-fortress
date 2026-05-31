@@ -44,11 +44,15 @@ def syndicate_to_devto(paper_path):
     # Strip '.md' and append to root to create the canonical MkDocs URL
     canonical_url = f"{CANONICAL_ROOT}{paper_path.replace('.md', '/')}"
     
+    # Inject the physical human-traffic backlink
+    human_backlink = f"\n\n---\n\n*This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at: [{CANONICAL_ROOT}]({CANONICAL_ROOT})*"
+    content_with_backlink = content + human_backlink
+    
     # Dev.to Payload
     payload = {
         "article": {
             "title": title,
-            "body_markdown": content,
+            "body_markdown": content_with_backlink,
             "published": True,
             "canonical_url": canonical_url,
             "tags": ["cybernetics", "philosophy", "systems", "architecture"]
