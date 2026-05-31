@@ -6,7 +6,7 @@ import subprocess
 import re
 
 DEVTO_API_KEY = os.environ.get("DEVTO_API_KEY")
-HASHNODE_TOKEN = os.environ.get("HASHNODE_TOKEN")
+MOONSHOT_API_KEY = os.environ.get("MOONSHOT_API_KEY")
 
 # The canonical root pointing back to the Fortress
 CANONICAL_ROOT = "https://mrhavens.github.io/knowledge-engineering-fortress/"
@@ -14,10 +14,8 @@ CANONICAL_ROOT = "https://mrhavens.github.io/knowledge-engineering-fortress/"
 def get_modified_papers():
     """Extracts the list of markdown papers modified in the latest commit."""
     try:
-        # Get files changed in the latest commit
         result = subprocess.run(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', 'HEAD'], capture_output=True, text=True)
         files = result.stdout.splitlines()
-        # Filter for the Spin-Off papers
         papers = [f for f in files if f.startswith('papers/') and f.endswith('.md')]
         return papers
     except Exception as e:
@@ -31,6 +29,41 @@ def extract_title(content, filename):
         return match.group(1).strip()
     return filename.replace('-', ' ').replace('.md', '').title()
 
+def generate_llm_context(content, title):
+    """Uses Moonshot API to generate a dynamic contextual backlink."""
+    if not MOONSHOT_API_KEY:
+        print("No Moonshot API key found. Defaulting to static backlink.")
+        return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
+        
+    print(f"Asking Moonshot to analyze '{title}' and generate a thoughtful context...")
+    
+    prompt = f"""You are an elite cybernetic systems architect. Read this academic paper excerpt and write a compelling, thoughtful 2-sentence call-to-action. The CTA must compel the reader to read the REST of the 14-level architectural Sovereign Canon. Do not use quotes or formatting. Be extremely profound and precise.
+    
+PAPER EXCERPT:
+{content[:1500]}
+"""
+
+    try:
+        response = requests.post(
+            "https://api.moonshot.cn/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {MOONSHOT_API_KEY}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "moonshot-v1-8k",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.7,
+                "max_tokens": 150
+            }
+        )
+        data = response.json()
+        context = data['choices'][0]['message']['content'].strip()
+        return context
+    except Exception as e:
+        print(f"Moonshot API failed: {e}")
+        return "This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at:"
+
 def syndicate_to_devto(paper_path):
     """Fires the payload to the Dev.to REST API."""
     if not DEVTO_API_KEY:
@@ -41,11 +74,12 @@ def syndicate_to_devto(paper_path):
         content = f.read()
 
     title = extract_title(content, os.path.basename(paper_path))
-    # Strip '.md' and append to root to create the canonical MkDocs URL
     canonical_url = f"{CANONICAL_ROOT}{paper_path.replace('.md', '/')}"
     
-    # Inject the physical human-traffic backlink
-    human_backlink = f"\n\n---\n\n*This theory is part of the 14-level Epistemic Autopoiesis architecture. Read the fully integrated Sovereign Canon at: [{CANONICAL_ROOT}]({CANONICAL_ROOT})*"
+    # Generate the Dynamic LLM Context
+    llm_context = generate_llm_context(content, title)
+    human_backlink = f"\n\n---\n\n*{llm_context} [{canonical_url}]({canonical_url})*"
+
     content_with_backlink = content + human_backlink
     
     # Dev.to Payload
@@ -76,7 +110,7 @@ def syndicate_to_devto(paper_path):
 
 def main():
     print("==============================================")
-    print(" LEVEL 10: AUTOMATED SYNDICATION BROADCAST")
+    print(" LEVEL 10: AUTOMATED SYNDICATION BROADCAST (LLM HOOK)")
     print("==============================================")
     
     papers = get_modified_papers()
