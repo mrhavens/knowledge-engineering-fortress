@@ -59,9 +59,9 @@ def attempt_openrouter(prompt):
 
 def attempt_gemini(prompt):
     if not GEMINI_API_KEY: return None
-    print("  -> Attempting Google Gemini (gemini-pro)...")
+    print("  -> Attempting Google Gemini (gemini-1.5-flash-latest)...")
     response = requests.post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={GEMINI_API_KEY}",
+        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}",
         headers={"Content-Type": "application/json"},
         json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.7, "maxOutputTokens": 150}}
     )
