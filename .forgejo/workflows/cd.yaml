@@ -18,6 +18,7 @@ jobs:
 
       - name: Compile Level 13 ML Dataset
         run: |
+          pip install requests
           python3 src/level-13-huggingface-dataset.py
           if [[ -n $(git status -s sovereign-canon-dataset.jsonl) ]]; then
             git config --global user.name "Sovereign Automaton"
@@ -27,6 +28,13 @@ jobs:
           else
             echo "Dataset is up to date."
           fi
+
+      - name: Level 10 Syndication Broadcast
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+        run: |
+          python3 src/level-10-syndicator.py
 
       - name: Install Kubectl
         run: |
