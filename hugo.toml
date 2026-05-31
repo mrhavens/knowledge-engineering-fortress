@@ -1,10 +1,12 @@
 baseURL = "https://canon.thefoldwithin.earth/"
 languageCode = "en-us"
-title = "The Sovereign Canon"
+title = "Mark Randall Havens"
 theme = "terminal"
 paginate = 5
 
 [params]
+  subtitle = "The Empathic Technologist"
+  
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "papers"
@@ -26,7 +28,7 @@ paginate = 5
   centerTheme = true
 
 [params.logo]
-  logoText = "root@sovereign-canon:~#"
+  logoText = "mark_randall_havens@empathic-technologist:~#"
   logoHomeLink = "/"
 
 [menu]
@@ -36,10 +38,15 @@ paginate = 5
     url = "/papers/"
     weight = 10
   [[menu.main]]
+    identifier = "philosophy"
+    name = "Philosophy"
+    url = "/philosophy/"
+    weight = 20
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 20
+    weight = 30
 
 [permalinks]
   papers = "/:filename/"
