@@ -1,5 +1,6 @@
 site_name: Knowledge Engineering Fortress
 site_description: The Epistemic Engine of the Sovereign Canon
+site_url: https://mrhavens.github.io/knowledge-engineering-fortress/
 theme:
   name: material
   palette:
