@@ -48,6 +48,6 @@ These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD p
 
 ### The Institutional Layers
 These levels interface with permanent human and academic institutions to legally and culturally anchor the Canon in human history.
-- **[Level 6: The Institutional Vault](level-6-institutional-vault.md)** *(Manual Execution: Zenodo DOI, OSF Registration, and SSRN Syndication)*
+- **[Level 6: The Institutional Vault](level-6-institutional-vault.md)** *(Hybrid Execution: Zenodo/Figshare Automation, OSF/SSRN Manual Syndication)*
 - **[Level 7: The Cultural Archive](level-7-cultural-archive.md)** *(Manual Web1 Preservation via the Internet Archive)*
 - **[Level 8: The On-Chain Immutable Ledger](level-8-on-chain-ledger.md)** *(Manual execution to anchor hashes via Bitcoin `OP_RETURN` and Arweave Permaweb)*
