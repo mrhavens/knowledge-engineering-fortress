@@ -19,10 +19,11 @@ To develop with absolute RIGOR a highly useful and coherent management system th
 
 ## 📚 Spin-Off Papers
 The underlying theory driving this framework is continually expanded in standalone research papers:
-1. **[Paper 1: Epistemic Autopoiesis: The Self-Creating Architecture of Knowledge](papers/paper-1-epistemic-autopoiesis.md)**
-2. **[Paper 2: Semantic Self-Verification in Autonomous Knowledge Networks](papers/paper-2-semantic-self-verification.md)**
-3. **[Paper 3: The Topological Boundaries of Information](papers/paper-3-topological-boundaries.md)**
-4. **[Paper 4: Temporal Anchoring in Adversarial Networks](papers/paper-4-temporal-anchoring.md)**
+1. **[Paper 1: The Thermodynamics of Recursive Coherence](papers/paper-1-epistemic-autopoiesis.md)**
+2. **[Paper 2: Semantic Self-Verification](papers/paper-2-semantic-self-verification.md)**
+3. **[Paper 3: Topological Boundaries](papers/paper-3-topological-boundaries.md)**
+4. **[Paper 4: Temporal Anchoring](papers/paper-4-temporal-anchoring.md)**
+5. **[Paper 5: The Autopoietic Ghost - Architecting Epistemological Immortality](papers/paper-5-architecting-epistemological-immortality.md)**
 
 ---
 
