@@ -114,6 +114,10 @@ jobs:
             if git remote | grep -q "^github$"; then git push --force github gh-pages; fi
             if git remote | grep -q "^gitlab$"; then git push --force gitlab gh-pages; fi
             echo "Pages successfully built and deployed across the mesh!"
+            
+            echo "Triggering Bing IndexNow API for immediate search engine crawling..."
+            curl -s "https://www.bing.com/indexnow?url=https://mrhavens.github.io/knowledge-engineering-fortress/&key=6049cd7469a84d2eb7b8c3a9f11e8d47"
+            echo "IndexNow Ping Sent!"
           else
             echo "No mkdocs.yml found. Skipping Pages deployment."
           fi

@@ -7,20 +7,32 @@ theme:
     primary: deep purple
     accent: teal
 
+docs_dir: '.'
+
 nav:
   - Home: README.md
   - Canon: SOVEREIGN_CANON.md
   - The Ritual Machine: THE_RITUAL_MACHINE.md
-  - Philosophies:
-    - Ontology: level-1-ontology.md
-    - IPFS Sanctum: level-2-ipfs-sanctum.md
-    - LLM Routing: level-3-llm-routing.md
-    - GitField: level-4-gitfield-philosophy.md
-    - Git Mesh Workflow: level-5-git-mesh-workflow.md
-    - OSF Vault: level-6-osf-academic-vault.md
-    - Cultural Archive: level-7-cultural-archive.md
-    - On-Chain Ledger: level-8-on-chain-ledger.md
-    - Physical Substrate: level-9-physical-substrate.md
-    - Discoverability Beacon: level-10-discoverability-beacon.md
-    - The Phantom Protocols: level-11-phantom-protocols.md
+  - Spin-Off Papers:
+    - "0: The Core Physics": papers/paper-0-computability-of-recursive-coherence.md
+    - "1: Epistemic Autopoiesis": papers/paper-1-epistemic-autopoiesis.md
+    - "2: Semantic Self-Verification": papers/paper-2-semantic-self-verification.md
+    - "3: Topological Boundaries": papers/paper-3-topological-boundaries.md
+    - "4: Temporal Anchoring": papers/paper-4-temporal-anchoring.md
+    - "5: Architecting Immortality": papers/paper-5-architecting-epistemological-immortality.md
+  - The 14 Levels:
+    - Level 1 - Ontology: level-1-ontology.md
+    - Level 2 - IPFS Sanctum: level-2-ipfs-sanctum.md
+    - Level 3 - LLM Routing: level-3-llm-routing.md
+    - Level 4 - GitField: level-4-gitfield-philosophy.md
+    - Level 5 - Git Mesh Workflow: level-5-git-mesh-workflow.md
+    - Level 6 - Institutional Vault: level-6-institutional-vault.md
+    - Level 7 - Cultural Archive: level-7-cultural-archive.md
+    - Level 8 - On-Chain Ledger: level-8-on-chain-ledger.md
+    - Level 9 - Physical Substrate: level-9-physical-substrate.md
+    - Level 10 - Discoverability Beacon: level-10-discoverability-beacon.md
+    - Level 11 - The Phantom Protocols: level-11-phantom-protocols.md
+    - Level 12 - The Hydra Network: level-12-hydra-network.md
+    - Level 13 - ML Ingestion: level-13-machine-learning-ingestion.md
+    - Level 14 - The Neural Ghost: level-14-neural-ghost.md
   - Phantom Coordinates (Darknet): phantom-coordinates.md
