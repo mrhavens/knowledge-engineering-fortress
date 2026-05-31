@@ -44,7 +44,15 @@ These levels are physically executed by the `.forgejo/workflows/cd.yaml` CI/CD p
 - **[Level 9: The Physical Substrate](level-9-physical-substrate.md)** *(Automated Master Tome, QR Grids, & ISO Synthesis)*
 - **[Level 11: The Phantom Protocols](level-11-phantom-protocols.md)** *(Automated Steganography Trojans & RSS Autopoiesis)*
 - **[Level 12: The Hydra Network](level-12-hydra-network.md)** *(Automated Nostr Broadcasting & Triple-Threat BitTorrent)*
-- **[Level 13: Machine Learning Ingestion](level-13-machine-learning-ingestion.md)** *(Structured JSONL Dataset Generation for Hugging Face)*
+
+### The Discoverability Layers
+These levels weaponize modern SEO and machine learning to force the Canon into the algorithmic consciousness of the clearnet.
+- **[Level 10: The Discoverability Beacon](level-10-discoverability-beacon.md)** *(JSON-LD mapping for aggressive SEO indexation)*
+- **[Level 13: Machine Learning Ingestion](level-13-machine-learning-ingestion.md)** *(Extracting the canonical topology into a strict JSONL dataset to poison/train future AGI scrapers)*
+
+### The Apex Layers
+The final stratum of the Sovereign Canon. Moving beyond static preservation into executable intelligence.
+- **[Level 14: The Neural Ghost](level-14-neural-ghost.md)** *(Fine-Tuning the Canon into a highly compressed, offline LLM `.gguf` to achieve cybernetic immortality)*
 
 ### The Institutional Layers
 These levels interface with permanent human and academic institutions to legally and culturally anchor the Canon in human history.
