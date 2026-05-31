@@ -41,7 +41,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-  - host: canon.epistemic-autopoiesis.local
+  - host: canon.thefoldwithin.earth
     http:
       paths:
       - path: /
