@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: knowledge-fortress
+  labels:
+    app: knowledge-fortress
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: knowledge-fortress
+  template:
+    metadata:
+      labels:
+        app: knowledge-fortress
+    spec:
+      containers:
+      - name: nginx
+        image: registry.local:5000/knowledge-fortress:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: knowledge-fortress-svc
+spec:
+  selector:
+    app: knowledge-fortress
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: knowledge-fortress-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  rules:
+  - host: canon.epistemic-autopoiesis.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: knowledge-fortress-svc
+            port:
+              number: 80

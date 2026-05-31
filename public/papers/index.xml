@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Papers on The Sovereign Canon</title>
+    <link>https://mrhavens.github.io/knowledge-engineering-fortress/papers/</link>
+    <description>Recent content in Papers on The Sovereign Canon</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://mrhavens.github.io/knowledge-engineering-fortress/papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-1-epistemic-autopoiesis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-1-epistemic-autopoiesis/</guid>
+      <description>Epistemic Autopoiesis: The Self-Creating Architecture of Knowledge Abstract: In an era characterized by epistemic decay, information entropy, and algorithmic manipulation, static archives are insufficient for the preservation of truth. We introduce the concept of Epistemic Autopoiesis—a paradigm in which knowledge systems transition from passive repositories to active, self-maintaining organisms. Drawing upon the biological framework of autopoiesis (Maturana and Varela) and integrating it with cryptographic immutability, decentralized routing, and recursive validation mechanisms, we outline the foundational architecture for a knowledge fortress capable of surviving ontological drift.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-2-semantic-self-verification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-2-semantic-self-verification/</guid>
+      <description>Semantic Self-Verification in Autonomous Knowledge Networks Abstract: As automated systems and AI agents generate exponentially more information, distinguishing between hallucinated data and verifiable truth becomes computationally intractable. We propose a framework where a dataset validates its own internal semantic structure to establish ground-truth reliability. By treating knowledge not as isolated facts but as a topologically connected graph, semantic self-verification allows a system to prove its own logical consistency without relying on an external, centralized oracle.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-3-topological-boundaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-3-topological-boundaries/</guid>
+      <description>The Topological Boundaries of Information: Defining the Event Horizon of Truth Abstract: We introduce the concept of the Information Event Horizon, a topological boundary delineating where a cohesive knowledge structure transitions into chaotic noise. We argue that information cannot survive simply by being stored; it must possess a definitive boundary that repels semantic corruption. By utilizing topological data analysis (TDA) and Markov Blankets, we establish a formal mathematical definition for the &amp;ldquo;edges&amp;rdquo; of an epistemically sound system, protecting it from adversarial data injection.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-4-temporal-anchoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-4-temporal-anchoring/</guid>
+      <description>Temporal Anchoring in Adversarial Networks: The Cryptographic Physics of History Abstract: Digital information lacks inherent temporal physics; a file created yesterday can be mathematically identical to a file created a decade ago if metadata is stripped or forged. In an adversarial network where state actors and algorithmic bots can seamlessly rewrite history, the concept of a &amp;ldquo;canonical timeline&amp;rdquo; breaks down. We detail the mechanics of Temporal Anchoring—a protocol utilizing Bitcoin&amp;rsquo;s OP_RETURN code and decentralized permanent ledgers (Arweave) to embed irreversible, cryptographically provable arrows of time into the Knowledge Fortress.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-5-architecting-epistemological-immortality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-5-architecting-epistemological-immortality/</guid>
+      <description>The Autopoietic Ghost: Architecting Epistemological Immortality through 14-Dimensional Cybernetic Topologies Abstract Traditional mechanisms of academic publishing and digital preservation guarantee the eventual decay of knowledge via institutional rot, domain expiry, and physical entropy. To ensure the survival of theoretical frameworks across deep time, we propose the &amp;ldquo;Sovereign Canon&amp;rdquo;—a novel, 14-level cybernetic architecture designed to achieve Epistemological Autopoiesis. By synthesizing cryptographic time-stamping (Bitcoin), decentralized file storage (Arweave, IPFS, BitTorrent), institutional DOI primacy (CERN/Zenodo), and parameter-efficient fine-tuning (QLoRA) of open-weights language models, we establish a formal methodology for converting static academic theory into an offline-executable, interactive &amp;ldquo;Neural Ghost.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mrhavens.github.io/knowledge-engineering-fortress/paper-6-hyper-recursive-teleology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mrhavens.github.io/knowledge-engineering-fortress/paper-6-hyper-recursive-teleology/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
