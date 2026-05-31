@@ -9,13 +9,13 @@ paginate = 5
   
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "papers"
+  contentTypeName = "posts"
 
   # "light" or "dark"
   themeColor = "dark"
 
   # if you set this to 0, only headings with level 1-3 will be shown.
-  showMenuItems = 3
+  showMenuItems = 4
 
   # show word count and read time ?
   showWordCount = true
@@ -33,20 +33,25 @@ paginate = 5
 
 [menu]
   [[menu.main]]
-    identifier = "papers"
-    name = "Papers"
-    url = "/papers/"
+    identifier = "codex"
+    name = "Codex"
+    url = "/posts/"
     weight = 10
   [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/posts/"
+    identifier = "papers"
+    name = "Papers"
+    url = "/tags/paper/"
     weight = 20
+  [[menu.main]]
+    identifier = "essays"
+    name = "Essays"
+    url = "/tags/essay/"
+    weight = 30
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 30
+    weight = 40
 
 [permalinks]
   papers = "/:filename/"
